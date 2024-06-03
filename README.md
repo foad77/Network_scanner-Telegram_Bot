@@ -16,7 +16,7 @@ Ensure you have the following installed on your system:
 #### On macOS:
 
 ```sh
-### brew install yq
+#### brew install yq
 On Linux:
 $ sudo apt-get install -y jq
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
