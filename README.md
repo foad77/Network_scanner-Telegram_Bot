@@ -2,6 +2,18 @@
 
 This project consists of a Bash script and a Python script that together perform various network scans and report the results to a Telegram bot. The scans can be customized, and the results are sent in an Excel file format.
 
+Scan Types
+
+    ARP Scan: Quickly list all active IPs on your local network.
+    Ping Scan (-sn): Quick check if hosts are online.
+    List Scan (-sL): Resolves IP addresses to hostnames.
+    Quick Scan (-T4 -F): Scans top 100 ports quickly.
+    Port Scan (-p): Scans specific ports or full range.
+    Service Version Detection (-sV): Detects services running on open ports.
+    OS Detection (-O): Attempts to determine the operating system.
+    Aggressive Scan (-A): Comprehensive scan including OS, version detection, and script scanning.
+    Full Scan with All Advanced Features (-p1-65535 -T4 -A --version-all -sC): Most detailed scan of every port and feature.
+
 ## Prerequisites
 
 Ensure you have the following installed on your system:
