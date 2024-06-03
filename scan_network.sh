@@ -8,17 +8,32 @@ CONFIG_FILE="config.yaml"
 get_network_info() {
     OS=$(uname -s)
     if [ "$OS" = "Darwin" ]; then
-        # For macOS
-        INTERFACE=$(yq '.network_interfaces.mac' $CONFIG_FILE)
-        IP_INFO=$(ifconfig $INTERFACE | awk '/inet /{print $2}')
-        NETMASK=$(ifconfig $INTERFACE | awk '/netmask /{printf("%x\n",$4)}' | sed 's/..../&./g')
+        INTERFACES=$(yq '.network_interfaces.mac[]' $CONFIG_FILE)
     elif [ "$OS" = "Linux" ]; then
-        # For Linux
-        INTERFACE=$(yq '.network_interfaces.linux' $CONFIG_FILE)
-        IP_INFO=$(ip -4 addr show $INTERFACE | grep -oP 'inet \K[\d.]+')
-        NETMASK=$(ip -4 addr show $INTERFACE | grep -oP 'inet.*\K/\d+')
+        INTERFACES=$(yq '.network_interfaces.linux[]' $CONFIG_FILE)
     else
         echo "Unsupported OS"
+        exit 1
+    fi
+
+    for INTERFACE in $INTERFACES; do
+        if [ "$OS" = "Darwin" ]; then
+            IP_INFO=$(ifconfig $INTERFACE | awk '/inet /{print $2}')
+            if [ -n "$IP_INFO" ]; then
+                NETMASK=$(ifconfig $INTERFACE | awk '/netmask /{printf("%x\n",$4)}' | sed 's/..../&./g')
+                break
+            fi
+        elif [ "$OS" = "Linux" ]; then
+            IP_INFO=$(ip -4 addr show $INTERFACE | grep -oP 'inet \K[\d.]+')
+            if [ -n "$IP_INFO" ]; then
+                NETMASK=$(ip -4 addr show $INTERFACE | grep -oP 'inet.*\K/\d+')
+                break
+            fi
+        fi
+    done
+
+    if [ -z "$IP_INFO" ]; then
+        echo "No active network interface found."
         exit 1
     fi
 

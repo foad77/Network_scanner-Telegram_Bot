@@ -1,8 +1,19 @@
 # config.yaml
 
 network_interfaces:
-  mac: "en0"
-  linux: "enp1s0"
+  mac:
+    - "en0"
+    - "en1"
+    - "en2"
+  linux:
+    - "eth0"
+    - "eth1"
+    - "enp0s3"
+    - "enp1s0"
+    - "eno1"
+    - "eno2"
+    - "wlan0"
+    - "wlan1"
 
 telegram:
   token: "your_bot_token"
