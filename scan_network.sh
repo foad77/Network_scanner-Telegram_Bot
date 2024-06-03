@@ -1,16 +1,20 @@
 #!/bin/bash
 clear
+
+# Load configuration from YAML
+CONFIG_FILE="config.yaml"
+
 # Function to determine the OS and fetch IP information
 get_network_info() {
     OS=$(uname -s)
     if [ "$OS" = "Darwin" ]; then
         # For macOS
-        INTERFACE="en0"  # default to en0, commonly used for Wi-Fi on macOS; adjust as needed for Ethernet
+        INTERFACE=$(yq '.network_interfaces.mac' $CONFIG_FILE)
         IP_INFO=$(ifconfig $INTERFACE | awk '/inet /{print $2}')
         NETMASK=$(ifconfig $INTERFACE | awk '/netmask /{printf("%x\n",$4)}' | sed 's/..../&./g')
     elif [ "$OS" = "Linux" ]; then
         # For Linux
-        INTERFACE="enp1s0"  # default to eth0; adjust as needed
+        INTERFACE=$(yq '.network_interfaces.linux' $CONFIG_FILE)
         IP_INFO=$(ip -4 addr show $INTERFACE | grep -oP 'inet \K[\d.]+')
         NETMASK=$(ip -4 addr show $INTERFACE | grep -oP 'inet.*\K/\d+')
     else

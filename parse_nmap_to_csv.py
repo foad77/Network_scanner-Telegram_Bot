@@ -3,20 +3,21 @@ import csv
 import sys
 from datetime import datetime
 import requests
+import yaml
 
-def send_telegram_message(message):
+def load_config(config_file='config.yaml'):
+    with open(config_file, 'r') as file:
+        return yaml.safe_load(file)
+
+def send_telegram_message(token, chat_id, message):
     """Send a message via Telegram bot."""
-    token = '6357833747:AAG0fz5DvgyJRXk6tGHpSpwxSbJktS2R_6Q'  # Replace 'your_bot_token' with your actual Telegram bot token.
-    chat_id = '65442882'  # Replace 'your_chat_id' with your actual Telegram chat ID.
     url = f'https://api.telegram.org/bot{token}/sendMessage'
     data = {'chat_id': chat_id, 'text': message}
     response = requests.post(url, data=data)
     print("Message sent to Telegram:", response.text)
 
-def send_telegram_document(file_path):
+def send_telegram_document(token, chat_id, file_path):
     """Send a document via Telegram bot."""
-    token = '6357833747:AAG0fz5DvgyJRXk6tGHpSpwxSbJktS2R_6Q'
-    chat_id = '65442882'
     url = f'https://api.telegram.org/bot{token}/sendDocument'
     files = {'document': open(file_path, 'rb')}
     data = {'chat_id': chat_id}
@@ -24,6 +25,10 @@ def send_telegram_document(file_path):
     print("Document sent to Telegram:", response.text)
 
 def parse_nmap_xml_to_csv(xml_file, scan_flag):
+    config = load_config()
+    token = config['telegram']['token']
+    chat_id = config['telegram']['chat_id']
+
     date_time = datetime.now().strftime("D_%m_%d_T_%H_%M")
     csv_file = f"LANscanResult_{date_time}_{scan_flag}.csv"
     
@@ -60,8 +65,8 @@ def parse_nmap_xml_to_csv(xml_file, scan_flag):
 
     # Send notification and the CSV report via Telegram
     message = f"The scan finished at {date_time}, and the result is saved in {csv_file}"
-    send_telegram_message(message)
-    send_telegram_document(csv_file)
+    send_telegram_message(token, chat_id, message)
+    send_telegram_document(token, chat_id, csv_file)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:

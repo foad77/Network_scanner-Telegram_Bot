@@ -1,0 +1,9 @@
+# config.yaml
+
+network_interfaces:
+  mac: "en0"
+  linux: "enp1s0"
+
+telegram:
+  token: "your_bot_token"
+  chat_id: "your_chat_id"
