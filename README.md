@@ -33,13 +33,20 @@ On Linux:
 $ sudo apt-get install -y jq
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
 $ sudo chmod +x /usr/bin/yq
+sh
 
+#### On Linux (Debian Based. I.e., Ubuntu, Mint, Kali, etc):
 
+```sh
+
+'Apt-get Install yq'
+
+sh
 Installing Python Packages
 
 Ensure you have Python 3.10.10 installed. Then, install the required Python packages using pip:
 
-sh
+
 
 $ pip install -r requirements.txt
 
