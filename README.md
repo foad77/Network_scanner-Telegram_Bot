@@ -38,6 +38,12 @@ To create a Telegram bot and obtain the necessary credentials, follow these step
 5. Get your chat ID by starting a chat with your bot and sending any message. Open the following URL in your browser: `https://api.telegram.org/bot<your-telegram-bot-token>/getUpdates`. Replace `<your-telegram-bot-token>` with your actual bot token. Look for the `chat` object in the response to find your chat ID.
 For a more detailed tutorial on creating a Telegram bot and obtaining the token and chat ID, refer to [this tutorial](https://core.telegram.org/bots#3-how-do-i-create-a-bot).
 
+### Editing the config.yaml file
+```sh
+          
+token: 'your_telegram_bot_token'   # for example: '6357833747:AAG0fz5DvgyJRk6tGHpSpwxSfJktS2R_6W'
+chat_id: 'your_telegram_chat_id'   # for example: '65442345'
+```
 ### Installing `yq`
 
 #### On macOS:
