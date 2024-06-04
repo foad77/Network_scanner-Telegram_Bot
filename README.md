@@ -18,7 +18,6 @@ This project consists of a Bash script and a Python script that together perform
 
 Ensure you have the following installed on your system:
 
-- Bash
 - Python 3.10.10
 - `yq` for YAML processing in the Bash script
 - Required Python packages (listed in `requirements.txt`)
@@ -26,8 +25,8 @@ Ensure you have the following installed on your system:
 ### Installing `yq`
 
 #### On macOS:
-
-#### brew install yq
+```sh
+brew install yq
 
 ```sh
 On Linux:
@@ -37,11 +36,6 @@ $ sudo chmod +x /usr/bin/yq
 
 ```
 
-#### On Linux (Debian Based. I.e., Ubuntu, Mint, Kali, etc):
-
-```sh
-'Apt-get Install yq'
-```
 
 ### Installing Python Packages
 
