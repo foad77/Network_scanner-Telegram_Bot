@@ -28,11 +28,12 @@ Ensure you have the following installed on your system:
 #### On macOS:
 
 #### brew install yq
-'''sh
+'''
 On Linux:
 $ sudo apt-get install -y jq
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
-$ sudo chmod +x /usr/bin/yq'''
+$ sudo chmod +x /usr/bin/yq
+'''
 
 #### On Linux (Debian Based. I.e., Ubuntu, Mint, Kali, etc):
 
