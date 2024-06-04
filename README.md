@@ -4,15 +4,15 @@ This project consists of a Bash script and a Python script that together perform
 
 **Scan Types**
 
-0   ARP Scan: Quickly list all active IPs on your local network.
-1    Ping Scan (-sn): Quick check if hosts are online.
-2    List Scan (-sL): Resolves IP addresses to hostnames.
-3    Quick Scan (-T4 -F): Scans top 100 ports quickly.
-4    Port Scan (-p): Scans specific ports or full range.
-5    Service Version Detection (-sV): Detects services running on open ports.
-6    OS Detection (-O): Attempts to determine the operating system.
-7    Aggressive Scan (-A): Comprehensive scan including OS, version detection, and script scanning.
-8    Full Scan with All Advanced Features (-p1-65535 -T4 -A --version-all -sC): Most detailed scan of every port and feature.
+-0   ARP Scan: Quickly list all active IPs on your local network.
+-1    Ping Scan (-sn): Quick check if hosts are online.
+-2    List Scan (-sL): Resolves IP addresses to hostnames.
+-3    Quick Scan (-T4 -F): Scans top 100 ports quickly.
+-4    Port Scan (-p): Scans specific ports or full range.
+-5    Service Version Detection (-sV): Detects services running on open ports.
+-6    OS Detection (-O): Attempts to determine the operating system.
+-7    Aggressive Scan (-A): Comprehensive scan including OS, version detection, and script scanning.
+-8    Full Scan with All Advanced Features (-p1-65535 -T4 -A --version-all -sC): Most detailed scan of every port and feature.
 
 ## Prerequisites
 
