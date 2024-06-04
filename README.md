@@ -2,7 +2,7 @@
 
 This project consists of a Bash script and a Python script that together perform various network scans and report the results to a Telegram bot. The scans can be customized, and the results are sent in an Excel file format.
 
-Scan Types
+**Scan Types**
 
 0   ARP Scan: Quickly list all active IPs on your local network.
 1    Ping Scan (-sn): Quick check if hosts are online.
