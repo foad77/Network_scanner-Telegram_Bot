@@ -28,8 +28,9 @@ Ensure you have the following installed on your system:
 ```sh
 brew install yq
 
+```
+### On Linux:
 ```sh
-On Linux:
 $ sudo apt-get install -y jq
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
 $ sudo chmod +x /usr/bin/yq
@@ -44,12 +45,14 @@ Ensure you have Python 3.10.10 installed. Then, install the required Python pack
 ```sh
 pip install -r requirements.txt
 
-```sh
+```
 
 Running the Script
 
 To perform a network scan and send the results to a Telegram bot, execute the Bash script:
 
-sh
+```sh
 
 $ ./network_scan.sh
+
+```
