@@ -49,12 +49,12 @@ chat_id: 'your_telegram_chat_id'   # for example: '65442345'
 ```sh
 brew install yq
 ```
-### On Linux:
+#### On Linux:
 
 ```sh
 $ sudo apt-get install -y jq
 ```
-## or
+#### or
 
 ```sh
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
