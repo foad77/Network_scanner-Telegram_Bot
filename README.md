@@ -50,7 +50,13 @@ pip install -r requirements.txt
 
 ```
 
-Running the Script
+## Running the Script
+Go to the directory where the files are . i.e., cd ...
+then give the program execution permission:
+
+```sh
+chmod +x network_scan.sh
+```
 
 To perform a network scan and send the results to a Telegram bot, execute the Bash script:
 
