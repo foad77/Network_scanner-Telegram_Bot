@@ -81,5 +81,5 @@ chmod +x network_scan.sh
 To perform a network scan and send the results to a Telegram bot, execute the Bash script:
 
 ```sh
-$ ./network_scan.sh
+./network_scan.sh
 ```
