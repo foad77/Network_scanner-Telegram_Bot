@@ -39,14 +39,18 @@ $ sudo chmod +x /usr/bin/yq
 
 #### On Linux (Debian Based. I.e., Ubuntu, Mint, Kali, etc):
 
-
+```sh
 'Apt-get Install yq'
+```
 
-Installing Python Packages
+### Installing Python Packages
 
 Ensure you have Python 3.10.10 installed. Then, install the required Python packages using pip:
 
-$ pip install -r requirements.txt
+```sh
+pip install -r requirements.txt
+
+```sh
 
 Running the Script
 
