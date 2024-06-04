@@ -39,8 +39,7 @@ To create a Telegram bot and obtain the necessary credentials, follow these step
 For a more detailed tutorial on creating a Telegram bot and obtaining the token and chat ID, refer to [this tutorial](https://core.telegram.org/bots#3-how-do-i-create-a-bot).
 
 ### Editing the config.yaml file
-```sh
-          
+```sh        
 token: 'your_telegram_bot_token'   # for example: '6357833747:AAG0fz5DvgyJRk6tGHpSpwxSfJktS2R_6W'
 chat_id: 'your_telegram_chat_id'   # for example: '65442345'
 ```
@@ -49,17 +48,17 @@ chat_id: 'your_telegram_chat_id'   # for example: '65442345'
 #### On macOS:
 ```sh
 brew install yq
-
 ```
 ### On Linux:
+
 ```sh
 $ sudo apt-get install -y jq
 ```
 ## or
+
 ```sh
 $ sudo wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O /usr/bin/yq
 $ sudo chmod +x /usr/bin/yq
-
 ```
 
 
@@ -69,7 +68,6 @@ Ensure you have Python 3.10.10 installed. Then, install the required Python pack
 
 ```sh
 pip install -r requirements.txt
-
 ```
 
 ## Running the Script
@@ -83,7 +81,5 @@ chmod +x network_scan.sh
 To perform a network scan and send the results to a Telegram bot, execute the Bash script:
 
 ```sh
-
 $ ./network_scan.sh
-
 ```
